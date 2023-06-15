@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: maintenance-service
+  jpa:
+    hibernate:
+      ddl-auto: none
+  main:
+    allow-bean-definition-overriding: true
+---
+spring:
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+---
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+server:
+  port: 9191
+openapi:
+  server:
+    url: ${holter.apigateway.url}/search
+---
+spring:
+  profiles: dev
+  cloud:
+    config:
+      uri: http://10.0.0.104:8888
+      label: dev
+---
+spring:
+  profiles: local,default
+  cloud:
+    config:
+      uri: http://localhost:8888
+      label: localsiva
+
