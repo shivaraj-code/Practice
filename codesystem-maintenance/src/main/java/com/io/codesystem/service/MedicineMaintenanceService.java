@@ -39,7 +39,7 @@ public class MedicineMaintenanceService extends CodesystemMaintenanceService {
 		
 				medicines.setId(Integer.parseInt(record.get(0)));
 				medicines.setNdc(record.get(1));
-				medicines.setNdc(record.get(2));
+				medicines.setName(record.get(2));
 				medicines.setDea(Integer.parseInt(record.get(3)));
 				medicines.setObsdtec(record.get(4));
 				medicines.setRepack(Integer.parseInt(record.get(5)));
